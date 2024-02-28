@@ -4,6 +4,17 @@
     <script language="javascript" type="text/javascript">
     	<!--
         window.onload=function(){
+            "use strict";
+            var d2=decodeURIComponent(document.location.search).toLowerCase();
+            if(
+                    d2.indexOf('javascript:') > -1 ||
+                    d2.indexOf('//') > -1 ||
+                    d2.indexOf('..') > -1 ||
+                    d2.indexOf(':') > -1
+            ){
+                    return;
+            }
+
             var d=document.location.search;
 			var args=d.substring(d.lastIndexOf('?')+1,d.length);
 			var classFrameContent=args;
@@ -37,4 +48,4 @@
         </body>
     </noframes>
 </frameset>
-<!--<br/>Tue Feb 27 2024, 05:22 PM -03:00  --></html>
+<!--<br/>Wed Feb 28 2024, 11:45 AM -03:00  --></html>
